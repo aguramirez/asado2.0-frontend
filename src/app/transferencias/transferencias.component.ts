@@ -7,7 +7,7 @@ import { TransferenciasService } from './transferencias.service';
 })
 export class TransferenciasComponent {
 
-  transferencias: string | undefined;
+  transferencias: string[] | undefined;
 
   constructor(private transferenciaService: TransferenciasService){}
 
