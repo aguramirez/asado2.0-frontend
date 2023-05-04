@@ -17,4 +17,13 @@ export class UsuariosComponent {
       usuarios => this.usuarios = usuarios
     );
   }
+
+  delete(usuario: Usuario): void{
+    this.usuarioService.delete(usuario.id).subscribe(
+      response => {
+        this.usuarios = this.usuarios?.filter(usu => usu !== usuario)
+      }
+    )
+  }
+  
 }

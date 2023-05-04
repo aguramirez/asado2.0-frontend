@@ -8,11 +8,15 @@ import { UsuarioService } from './usuarios/usuario.service';
 import { RouterModule, Routes } from '@angular/router';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CrearComponent } from './crear/crear.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: '/usuarios', pathMatch: 'full'},
   {path: 'usuarios', component: UsuariosComponent},
-  {path: 'transferencias', component: TransferenciasComponent}
+  {path: 'transferencias', component: TransferenciasComponent},
+  {path: 'usuarios/crear', component: CrearComponent},
+  {path: 'usuarios/crear/:id', component: CrearComponent},
 ]
 
 
@@ -21,11 +25,13 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     UsuariosComponent,
-    TransferenciasComponent
+    TransferenciasComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [UsuarioService],

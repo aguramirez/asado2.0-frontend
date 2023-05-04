@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center">
+<div class="card bg-dark text-white mt-3">
+    <div class="card-header"> Crear usuario</div>
+    <div class="card-body">
+        
+        <form>
+
+            <div class="form-group row mb-3">
+                <label for="nombre" class="col-form-label col-sm-5">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre">
+                </div>
+            </div>
+
+            <div class="form-group row mb-3">
+                <label for="dinero" class="col-form-label col-sm-5">Dinero</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="usuario.dinero" name="dinero">
+                </div>
+            </div>
+
+            <div class="form-group row mb-3">
+                <label for="alias" class="col-form-label col-sm-5">Alias</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="usuario.alias" name="alias">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-outline-primary" (click)="create()" *ngIf="!usuario.id else elseBlock">Crear</button>
+                    <ng-template #elseBlock>
+                        <button class="btn btn-outline-primary" (click)="update()">Editar</button>
+                    </ng-template>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>

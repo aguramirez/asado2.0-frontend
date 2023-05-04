@@ -13,7 +13,6 @@ export class TransferenciasService {
   constructor(private http: HttpClient) { }
 
   getTransferencias(): Observable<string[]>{
-
     return this.http.get<string[]>(this.urlEndPoint);
   }
 }
